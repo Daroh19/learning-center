@@ -5,9 +5,23 @@ import PrimeVue from 'primevue.config';
 import Material from '@primeuix/themes/material';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
+import {
+    Button,
+    Card,
+    Checkbox,
+    Column,
+    ConfirmationService,
+    ConfirmDialog, DataTable, Dialog,
+    DialogService, Drawer, FileUpload, FloatLabel, IconField, InputIcon, InputNumber, InputText, Menu,
+    Rating, Row, Select, SelectButton, Tag, Textarea, Toast,
+    ToastService, Toolbar, Tooltip
+} from "primevue";
+import i18n from "./i18n.js";
+import router from "./router.js";
 
 createApp(App)
     .use(i18n)
+    .use(router)
     .use(PrimeVue, {theme: { preset: Material}, ripple: true })
     .use(ConfirmationService)
     .use(DialogService)
@@ -28,12 +42,13 @@ createApp(App)
     .component('pv-input-icon', InputIcon)
     .component('pv-input-text', InputText)
     .component('pv-input-number', InputNumber)
+    .component('pv-row', Row)
     .component('pv-menu', Menu)
     .component('pv-rating', Rating)
     .component('pv-row', DataTable)
     .component('pv-tag', Tag)
-    .component('pv-text-tarea', TextTarea)
+    .component('pv-text-tarea', Textarea)
     .component('pv-toolbar', Toolbar)
     .component('pv-toast', Toast)
-    .directive('tooltip', ToolTip)
+    .directive('tooltip', Tooltip)
     .mount('#app')
